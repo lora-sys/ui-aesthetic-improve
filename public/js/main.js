@@ -1,0 +1,2 @@
+function copy(btn){const c=btn.parentElement.querySelector('code');navigator.clipboard.writeText(c.textContent).then(()=>{const o=btn.textContent;btn.textContent='Copied';btn.style.borderColor='#34d399';btn.style.color='#34d399';setTimeout(()=>{btn.textContent=o;btn.style.borderColor='';btn.style.color=''},1500)})}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}))

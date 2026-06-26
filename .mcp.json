@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ui-aesthetics-mcp": {
+      "command": "node",
+      "args": ["/Users/lora/repos/files/dist/index.js"]
+    }
+  }
+}

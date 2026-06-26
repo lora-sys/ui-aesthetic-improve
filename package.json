@@ -1,0 +1,56 @@
+{
+  "name": "ui-aesthetics-mcp",
+  "version": "1.0.0",
+  "description": "Open-source MCP server that routes frontend UI tasks to Gemini (via Antigravity CLI) for professional-grade aesthetic improvements",
+  "keywords": [
+    "mcp",
+    "gemini",
+    "ui",
+    "frontend",
+    "design",
+    "aesthetics",
+    "antigravity",
+    "claude-code",
+    "codex"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lora/ui-aesthetics-mcp.git"
+  },
+  "homepage": "https://github.com/lora/ui-aesthetics-mcp",
+  "bugs": {
+    "url": "https://github.com/lora/ui-aesthetics-mcp/issues"
+  },
+  "bin": {
+    "ui-aesthetics-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "AGENTS.md",
+    ".claude"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build",
+    "test": "npx tsx --test index.test.ts",
+    "test:watch": "npx tsx --test --watch index.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

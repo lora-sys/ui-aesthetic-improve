@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ui-aesthetics-mcp — Professional Design Sense for Any AI Agent</title>
+<meta name="description" content="Open-source MCP server that delegates frontend UI tasks to Gemini. Zero API costs. Beautiful results.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◆</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">◆ ui-aesthetics-mcp</a>
+    <div class="nav-right">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#install" class="nav-link">Install</a>
+      <a href="https://github.com/lora-sys/ui-aesthetic-improve" target="_blank" class="btn-github">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.59-4.04-1.59-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18a4.65 4.65 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Open Source · MIT License · No API Key Required</div>
+    <h1>Give Any AI Coding Agent<br><span class="gradient">Professional Design Sense</span></h1>
+    <p>An open-source MCP server that delegates frontend UI tasks to <strong>Gemini</strong> via Google's official Antigravity CLI. Zero API costs. Beautiful results.</p>
+    <div class="hero-actions">
+      <a href="#install" class="btn-primary">Get Started →</a>
+      <a href="https://github.com/lora-sys/ui-aesthetic-improve" target="_blank" class="btn-secondary">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <div class="container">
+    <h2>Six Powerful Tools</h2>
+    <p class="subtitle">Everything you need for professional-grade UI improvements</p>
+    <div class="grid">
+      <div class="card">
+        <h3>improve_ui</h3>
+        <p>Sends your frontend code to Gemini for a full aesthetic overhaul. Fixes spacing, typography, color contrast, hover states, and accessibility.</p>
+      </div>
+      <div class="card">
+        <h3>analyze_ui</h3>
+        <p>Returns a structured JSON design review with a score (0–100), issues list, and actionable fixes.</p>
+      </div>
+      <div class="card">
+        <h3>create_component</h3>
+        <p>Create a brand-new component or page from a text description. Production-ready, accessible, responsive.</p>
+      </div>
+      <div class="card">
+        <h3>generate_design_tokens</h3>
+        <p>Generates a complete CSS variable system with colors, spacing, typography, shadows, transitions, and z-index.</p>
+      </div>
+      <div class="card">
+        <h3>ask_gemini_design</h3>
+        <p>Free-form design Q&A. Ask Gemini anything about UI/UX — font pairings, color theory, layout patterns.</p>
+      </div>
+      <div class="card">
+        <h3>visual_diff</h3>
+        <p>Generate a side-by-side HTML visual diff report. See before/after changes with improvement scores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install" class="section section-alt">
+  <div class="container">
+    <h2>Installation</h2>
+    <p class="subtitle">Zero config. One command. Done.</p>
+
+    <div class="install-block">
+      <div class="install-header">
+        <span>Claude Code</span>
+        <span class="badge">Recommended</span>
+      </div>
+      <div class="code-row">
+        <code>claude mcp add ui-aesthetics-mcp -- npx -y ui-aesthetics-mcp</code>
+        <button class="copy-btn" onclick="copy(this)">Copy</button>
+      </div>
+    </div>
+
+    <div class="install-block">
+      <div class="install-header">
+        <span>Codex</span>
+      </div>
+      <div class="code-row">
+        <code>codex mcp add -- npx -y ui-aesthetics-mcp</code>
+        <button class="copy-btn" onclick="copy(this)">Copy</button>
+      </div>
+    </div>
+
+    <div class="install-block">
+      <div class="install-header">
+        <span>Claude Code Skill</span>
+      </div>
+      <div class="code-row">
+        <code>ln -s $(pwd)/.claude/skills/ui-aesthetic-improve ~/.claude/skills/ui-aesthetic-improve</code>
+        <button class="copy-btn" onclick="copy(this)">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arch" class="section">
+  <div class="container">
+    <h2>Architecture</h2>
+    <p class="subtitle">Claude Code manages. Gemini designs. You ship beautiful UIs.</p>
+    <div class="arch-flow">
+      <div class="arch-step">
+        <div class="arch-icon">🤖</div>
+        <div class="arch-label">Claude Code</div>
+        <div class="arch-tag">Manager</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-step">
+        <div class="arch-icon">🔌</div>
+        <div class="arch-label">MCP Server</div>
+        <div class="arch-tag">Bridge</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-step">
+        <div class="arch-icon">🚀</div>
+        <div class="arch-label">agy CLI</div>
+        <div class="arch-tag">Google</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-step">
+        <div class="arch-icon">💎</div>
+        <div class="arch-label">Gemini 3.5 Flash</div>
+        <div class="arch-tag">Designer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="https://github.com/lora-sys/ui-aesthetic-improve" target="_blank" class="footer-logo">◆ ui-aesthetics-mcp</a>
+      <div class="footer-links">
+        <a href="https://github.com/lora-sys/ui-aesthetic-improve" target="_blank">GitHub</a>
+        <a href="https://github.com/lora-sys/ui-aesthetic-improve/issues" target="_blank">Issues</a>
+        <a href="https://github.com/lora-sys/ui-aesthetic-improve/blob/main/LICENSE" target="_blank">MIT License</a>
+      </div>
+      <p>Free forever. No strings attached.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
