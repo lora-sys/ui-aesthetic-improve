@@ -49,31 +49,6 @@ async function mcpCall(
     let stdout = "";
     let stderr = "";
 
-    proc.stdout.on("data", (d: Buffer) => (stdout += d.toString()));
-    proc.stderr.on("data", (d: Buffer) => (stderr += d.toString()));
-
-    // MCP init sequence: first send initialize, then our call
-    const initialize = JSON.stringify({
-      jsonrpc: "2.0",
-      id: 1,
-      method: "initialize",
-      params: {
-        protocolVersion: "2024-11-05",
-        capabilities: {},
-        clientInfo: { name: "test-client", version: "0.0.1" },
-      },
-    }) + "\n";
-
-    const request = JSON.stringify({
-      jsonrpc: "2.0",
-      id: 2,
-      method,
-      params,
-    }) + "\n";
-
-    proc.stdin.write(initialize);
-    proc.stdin.write(request);
-
     // Collect responses and resolve/reject as soon as we get id===2
     let resolved = false;
     const checkResponse = (chunk: Buffer) => {
@@ -99,18 +74,35 @@ async function mcpCall(
       }
     };
 
-    proc.stdout.on("data", (d: Buffer) => checkResponse(d));
-    proc.stderr.on("data", (d: Buffer) => { /* ignore stderr noise */ });
-
-    proc.on("close", () => {
-      if (!resolved) {
-        resolved = true;
-        clearTimeout(timer);
-        reject(new Error("Server process closed unexpectedly"));
-      }
+    proc.stdout.on("data", (d: Buffer) => {
+      stdout += d.toString();
+      checkResponse(d);
+    });
+    proc.stderr.on("data", (d: Buffer) => {
+      stderr += d.toString();
     });
 
-    proc.on("error", reject);
+    // MCP init sequence: first send initialize, then our call
+    const initialize = JSON.stringify({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "initialize",
+      params: {
+        protocolVersion: "2024-11-05",
+        capabilities: {},
+        clientInfo: { name: "test-client", version: "0.0.1" },
+      },
+    }) + "\n";
+
+    const request = JSON.stringify({
+      jsonrpc: "2.0",
+      id: 2,
+      method,
+      params,
+    }) + "\n";
+
+    proc.stdin.write(initialize);
+    proc.stdin.write(request);
 
     // Timeout safety
     const timer = setTimeout(() => {
